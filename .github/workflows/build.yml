@@ -1,0 +1,41 @@
+name: Build Ember APK
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Build
+        run: bash ./gradlew assembleRelease --no-daemon
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/release/app-release.apk ember.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ember-apk
+          path: ember.apk
+
+      # Publishes a release so the Chromecast can download a fixed URL:
+      # https://github.com/<you>/<repo>/releases/latest/download/ember.apk
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Ember build ${{ github.run_number }}
+          files: ember.apk
+          make_latest: true

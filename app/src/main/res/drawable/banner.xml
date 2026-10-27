@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp" android:height="180dp" android:viewportWidth="320" android:viewportHeight="180">
+    <!-- dusk sky -->
+    <path android:pathData="M0,0 H320 V180 H0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="linear" android:startX="0" android:startY="0" android:endX="0" android:endY="180"
+                android:startColor="#FF1A1210" android:centerColor="#FF4A2414" android:endColor="#FFB4521C" />
+        </aapt:attr>
+    </path>
+    <!-- sun on the horizon -->
+    <path android:fillColor="#FFFFB24A" android:pathData="M226,150 A44,44 0 0,1 314,150 Z" />
+    <path android:fillColor="#FF120D0A" android:pathData="M0,150 H320 V180 H0 Z" />
+    <!-- EMBER wordmark -->
+    <group android:translateX="28" android:translateY="62">
+        <path android:strokeColor="#FFF3E9DF" android:strokeWidth="6" android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M22,0 H0 V36 H22 M0,18 H17" />
+        <path android:strokeColor="#FFF3E9DF" android:strokeWidth="6" android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M34,36 V0 L48,20 L62,0 V36" />
+        <path android:strokeColor="#FFF3E9DF" android:strokeWidth="6" android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M76,0 V36 H92 Q101,36 101,27 Q101,18 92,18 H76 M76,18 H90 Q99,18 99,9 Q99,0 90,0 H76" />
+        <path android:strokeColor="#FFF3E9DF" android:strokeWidth="6" android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M137,0 H115 V36 H137 M115,18 H132" />
+        <path android:strokeColor="#FFF3E9DF" android:strokeWidth="6" android:strokeLineCap="round" android:strokeLineJoin="round"
+            android:pathData="M150,36 V0 H164 Q174,0 174,10 Q174,20 164,20 H150 M162,20 L174,36" />
+    </group>
+</vector>
